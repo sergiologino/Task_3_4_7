@@ -41,7 +41,7 @@ public class Nomenclature {
         }
         if (myIndex==-1 && nomFounded)
             {
-                return "нет такого конвертора";
+                return "нет такого конвертора, допускаются кг и шт";
             }
         else if(myIndex==-1 && !nomFounded)
             {
@@ -52,7 +52,8 @@ public class Nomenclature {
         String newNom=nomRef[myIndex];
         float newQuantity=currentQuantity/foundKoef;
         String newMeasure="";
-        if (currentMeasure=="шт" || currentMeasure=="Шт" || currentMeasure=="ШТ")
+        System.out.println("тек. единица "+currentMeasure+" длина "+currentMeasure.length());
+        if (currentMeasure.equalsIgnoreCase("шт"))
             {
             newMeasure= "кг";
             }
